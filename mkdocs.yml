@@ -6,6 +6,7 @@ theme:
     primary: black
   features:
     - navigation.expand
+    - content.tooltips
 markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
@@ -14,11 +15,19 @@ markdown_extensions:
       generic: true
   - pymdownx.caret
   - footnotes 
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+watch:
+  - includes
   
 nav:
   - index.md
   - Lezioni:
     - Parte I:
+      - lezioni/lezione_01.md
       - lezioni/lezione_01.md
 
 extra_javascript:
