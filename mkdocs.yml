@@ -4,6 +4,7 @@ theme:
   palette:
     scheme: slate
     primary: black
+    accent: purple
   features:
     - navigation.expand
     - content.tooltips
@@ -28,7 +29,7 @@ nav:
   - Lezioni:
     - Parte I:
       - lezioni/lezione_01.md
-      - lezioni/lezione_01.md
+      - lezioni/lezione_02.md
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -38,4 +39,3 @@ extra_javascript:
 plugins:
   - search:
       lang: it
-  
