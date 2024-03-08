@@ -7,4 +7,5 @@
 
 === "Modellistica"
 
-    - [Modellistica dei sistemi elettrici](lezioni/lezione_02.md)
+    - [Modellistica di sistemi elettrici](lezioni/lezione_02.md)
+    - [Modellistica di sistemi meccanici](lezioni/lezione_03.md)
