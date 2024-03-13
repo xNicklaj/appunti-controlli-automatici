@@ -116,3 +116,56 @@ Analogamente per $X_2$ si ha che $X_2(s) = -\frac{2}{s} - \frac{2}{s+1} + \frac{
 Ricordando che $L{\frac{R}{s-a}} = Re^{at}\epsilon(t)$ si antitrasforma come $x(t) = \begin{bmatrix}x_1(t)\\x_2(t)\end{bmatrix} = \begin{bmatrix}3+2e^{-t} -3e^{-2t}\\-2-2e^{-t}+6e^{-2t}\end{bmatrix}\epsilon(t)$.
 
 Per il calcolo di residui con radici complesse coniugate, supponendo che $p_1$ e $p_2$ siano coniugati $R_1$ ed $R_2$ sono radici coniugate. Si può anche semplificare l'antitrasformata come $2|R_1|e^{\sigma_0t}cos(\omega_0 t + arg(R_1))\varepsilon(t)$, dove $|R_1| = \sqrt(Re^2{R_1} + Im^2(R_1))$ e $arg(R_1) = tan^{-1}\frac{Im(R_1)}{Re(R_1)}$.
+
+## Scomposizione in fratti semplici
+Se la funzione presenta radici multiple, varia leggermente la scomposizione di Heaviside come: $F(s) = \Sigma_i^r \Sigma_k^{\mu_i} \frac{R_{i,k}}{(s-p_i)^k}$, dove $\mu_i$ è la molteplicità della i-esima radice. I residui si calcolano come $R_{i,k} = \lim_{s\to p_i} = \frac{1}{(\mu_i - k)!}\frac{d^{\mu_i - k}}{ds^{\mu_i - k}}[(s-p_i)^\mu_i \cdot F(s)]$.
+
+### Esempio
+![alt text](../img/image07.png)
+
+Dati:
+
+$\dot{x}(t) = \begin{bmatrix}0&-16\\1&-8\end{bmatrix}x(t) + \begin{bmatrix}1\\2\end{bmatrix}u(t)$
+
+$y(t) = \begin{bmatrix}0&1\end{bmatrix}x(t)$
+
+Valutare l'uscita y(t) nel caso in cui l'ingresso sia una rampa $u(t) = 2t\varepsilon(t)$.
+
+$Y(s) = C(sI-A)^{-1}x(0) + [C(sI-A)^{-1}B+D]U(s) = [C(sI-A)^{-1}B+D]U(s)$[^2].
+
+Calcolo $(sI-A)^{-1}$:
+
+$(sI-A)^{-1} = \frac{1}{s^2 +8s +16}\begin{bmatrix}s+8&-16\\+1&s\end{bmatrix}$ $= \frac{1}{(s+4)^2}\begin{bmatrix}s+8&-16\\+1&s\end{bmatrix} = \begin{bmatrix}\frac{s+8}{(s+4)^2}&\frac{-16}{(s+4)^2}\\\frac{+1}{(s+4)^2}&\frac{s}{(s+4)^2}\end{bmatrix}$.
+
+Quindi si calcola Y(s) come:
+
+$Y(s) = \begin{bmatrix}0&1\end{bmatrix}\cdot \begin{bmatrix}\frac{s+8}{(s+4)^2}&\frac{-16}{(s+4)^2}\\\frac{+1}{(s+4)^2}&\frac{s}{(s+4)^2}\end{bmatrix} \cdot  \begin{bmatrix}1\\2\end{bmatrix}\frac{2}{s^2}$ $= \frac{2(2s+1)}{s^2(s+4)^2}$.
+
+[^2]: Questo perché il primo termine di y(t) è nullo.
+
+Infine i residui:
+
+$R_{1,1} = \lim_{s\to 0} = \frac{d}{ds}[(s)^2 \cdot F(s)] = \lim_{s\to 0}\frac{2(-2s+6)}{(s+4)^3}=0.1875$
+
+$R_{1,2} = \lim_{s\to 0} = [(s)^2 \cdot F(s)] = \lim_{s\to 0}s^2\frac{2(2s + 1)}{s^2(s+4)^2}=0.125$
+
+$R_{2,1} = ... = \lim_{s\to -4}\frac{-4(s+1)}{s^3}=-0.1875$
+
+$R_{2,2} = ... = \lim_{s\to -4}(s+4)^2\frac{2(2s + 1)}{s^2(s+4)^2}=-0.875$
+
+Quindi si può scrivere Y(s) come $Y(s) = \frac{0.1875}{s} + \frac{0.125}{s^2} - \frac{0.1875}{s+4} - \frac{0.875}{(s+4)^2}$.
+Antitrasformando si ha che $y(t) = (0.1875 + 0.125t - 0.1875e^{-4t} -0.875e^{-4t})\varepsilon(t)$
+
+## F(s) non strettamente propria
+
+Si fa la divisione polinomiale con $K = b_m$ il quoziente e $N_F(s)$ il resto.
+
+Si ha che $F(s) = K + \frac{N^{'}_F(s)}{D_F(s)} = b_m + F^{'}(s)$
+
+## Note per Matlab
+
+Il calcolo dei residui su matlab è molto semplice. Supponendo la funzione $F(s) = \frac{3s^2 + 5}{s^3 + 2s^2 + 4}$, a matlab serve dare due vettori N e D ognuno con i coefficienti delle potenze decrescenti di s, quindi in questo caso $num = \begin{bmatrix}3&0&5\end{bmatrix}$ e $den = \begin{bmatrix}1&2&0&4\end{bmatrix}$. Dunque si usa il comando `[R,p,K] = residue(num, den)` dove R è il vettore dei residui, p è il vettore dei poli e K è il quoziente[^3].
+
+[^3]: Se il quoziente è vuoto vuol dire che è 0.
+
+Per poli a molteplicità multipla, come nell'esempio precedente, matlab li ritorna sempre in ordine crescente di polo e molteplicità ($R_{11}$, $R_{12}$, $R_{21}$, $R_{22}$).
