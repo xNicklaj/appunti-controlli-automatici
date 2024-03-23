@@ -12,6 +12,8 @@
 
 *[dimensione finita]: Il numero di equazioni di stato è finito.
 
+*[termostatato]: La termperatura assoluta è impostata direttamente dall'esterno.
+
 *[SISO]: Single Input Single Output.
 
 *[MIMO]: Multiple Input Multiple Output.

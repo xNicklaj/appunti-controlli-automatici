@@ -1,4 +1,4 @@
-# Sistemi meccanici in rotazione
+# Modellistica di sistemi meccanici in rotazione
 
 Un corpo puntiforme in rotazione segue la seconda legge di newton $J\ddot{\theta}(t) = J\frac{d^2\theta(t)}{dt^2} = T(t)$. Le variabili importanti sono la posizione angolare $\theta$ e la velocità angolare $\omega$; J è definito momento d'inerzia e $J\ddot{\theta}(t)$ è definito *coppia d'inerzia*. Il sistema di riferimento standard vede la rotazione positiva nel senso in cui viene applicata la coppia di forze; se la coppia è in verso antiorario allora sarebbe meglio scegliere come positive le rotazioni antiorarie. Se il sistema presenta più coppie è necessario fare una scelta arbitraria.
 
