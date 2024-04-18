@@ -48,6 +48,7 @@ nav:
       - lezioni/lezione_06.md
       - lezioni/lezione_07.md
       - lezioni/lezione_08.md
+      - lezioni/lezione_10.md
 
 extra_javascript:
   - javascripts/mathjax.js

@@ -1,4 +1,4 @@
-# Analisi modale
+# Analisi Modale per sistemi dinamici LTI TC
 Studio delle caratteristiche del movimento libero $x_l(t)$ di un sistema dinamico lineare tempo invariante e tempo continuo di ordine n descritto dall'equazione di stato $\dot{x}(t) = Ax(t)$.
 
 Non essendovi la parte forzata, la forma della soluzione è $x_l(t) = e^{At}x(0_-)$.
@@ -38,7 +38,7 @@ $P_c = det\begin{bmatrix}A_{11} - \lambda&A_{12}&A_{13}\\A_{21}&A_{22} - \lambda
 Per le matrici triangolari a blocchi o diagonali a blocchi, gli autovalori sono la combinazione degli autovalori dei blocchi sulla diagonale.
 
 
-## Inizio
+## Analisi per sistemi lineari a tempo continuo       
 Avendo l'evoluzione dello stato $\dot{x} = Ax + Bu$, si realizza la matrice esponenziale come $e^{At}$. Questo però è molto oneroso computazionalmente, quindi si studia in alcuni casi specifici (diagonali a blocchi o triangolari a blocchi).
 
 Una volta trovati gli autovalori, si considerano molteplicità e insieme degli autovalori.
@@ -87,3 +87,43 @@ In questo caso, la forma della coppia di modi naturali che esce è $t^{\mu_i - 1
 | < 0   | Convergente |
 | 0     | Divergente |
 | > 0   | Divergente |
+
+### Costante di tempo
+Per i modi naturali a tempo continuo convergenti, si può definire la costante di tempo $\tau = \left|{\frac{1}{Re(\lambda)}}\right|$.
+
+## Analisi per sistemi lineari a tempo discreto      
+### Reali e distinti
+In questo caso il modo naturale si scrive come $\lambda^k$
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| \|$\lambda$\| < 1   | Convergente |
+| \|$\lambda$\| = 1     | Limitato o alternato |
+| \|$\lambda$\| > 1   | Divergente |
+
+### Reali e non distinti
+Come per il tempo continuo, si dovrebbe tenere in considerazione la molteplicità geometrica dell'autovalore, e si scrive il modo come $k^{\mu^{'}_i-1}\lambda^k$.
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| \|$\lambda$\| < 1   | Convergente |
+| \|$\lambda$\| = 1     | Divergente |
+| \|$\lambda$\| > 1   | Divergente |
+
+### Complessi e distinti
+In questo caso si usa la scrittura modulo/fase per descrivere gli autovalori complessi $\lambda = \sigma \pm j\omega$ $=\upsilon e^{\pm j\theta}$. Dopo aver ricavato questa rappresentazione, si può trovare la coppia di modi come $\upsilon^kcos(\theta k)$ e $\upsilon^ksin(\theta k)$
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| $\upsilon$ < 1   | Convergente |
+| $\upsilon$ = 1     | Limitato o alternato |
+| $\upsilon$ > 1   | Divergente |
+
+### Complessi e non distinti
+Come per il tempo continuo, si dovrebbe tenere in considerazione la molteplicità geometrica della coppia di autovalori complessi e coniugati, scrivendo la coppia di modi come $k^{\mu^{'}_i - 1}\upsilon^k cos(\theta k)$ e $k^{\mu^{'}_i - 1}\upsilon^k sin(\theta k)$.
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| \|$\lambda$\| < 1   | Convergente |
+| \|$\lambda$\| = 1     | Divergente |
+| \|$\lambda$\| > 1   | Divergente |

@@ -14,8 +14,8 @@
     - [Modellistica di sistemi termici](lezioni/lezione_07.md)
     
 === "Analisi"
-    - [Movimento di sistemi dinamici LTI](lezioni/lezione_04.md)
+    - [Movimento di sistemi dinamici LTI-TC](lezioni/lezione_04.md)
     - [Analisi Modale per sistemi dinamici LTI TC](lezioni/lezione_08.md)
-    - [Calcolo del movimento di sistemi dinamici LTI](lezioni/lezione_09.md)
+    - [Movimento di sistemi dinamici LTI-TD](lezioni/lezione_09.md)
     - [Equilibrio e stabilità di sistemi dinamici](lezioni/lezione_10.md)
     - [Boh](lezioni/lezione_boh.md)
