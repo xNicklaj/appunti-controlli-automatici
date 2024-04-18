@@ -36,7 +36,7 @@ Normalmente per risolvere il sistema si prendono le equazioni del dominio del te
 
 Dati $\dot{x}(t) = Ax(t) + Bu(t)$ e $y(t) = Cx(t) + Du(t)$:
 
-Si trasforma con laplace come: $L{\dot{x}(t)} = sX(s) - x(0) = AX(s) + BU(s)$. Dunque $sI_NX(s) - x_0 = AX(s) + BU(s)$ $\rightarrow sX(s) - AX(s)$ $= x_0 + BU(s)$ $\rightarrow (sI_N - A)X(s) = x_0 + BU(s)$ $\rightarrow X(s) = (sI_N - A)^{-1}x_0 + (sI_N - A)^{-1}BU(s)$.
+Si trasforma con laplace come: $L\{\dot{x}(t)\} = sX(s) - x(0) = AX(s) + BU(s)$. Dunque $sI_NX(s) - x_0 = AX(s) + BU(s)$ $\rightarrow sX(s) - AX(s)$ $= x_0 + BU(s)$ $\rightarrow (sI_N - A)X(s) = x_0 + BU(s)$ $\rightarrow X(s) = (sI_N - A)^{-1}x_0 + (sI_N - A)^{-1}BU(s)$.
 
 - $x(t)$ è un vettore ad N righe, dunque lo è anche $X(s)$.
 - A è una matrice quadrata.

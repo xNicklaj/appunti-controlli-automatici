@@ -8,6 +8,7 @@ theme:
   features:
     - navigation.expand
     - content.tooltips
+    - content.code.copy
 markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
@@ -24,6 +25,13 @@ markdown_extensions:
   - md_in_html
   - admonition
   - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
 watch:
   - includes

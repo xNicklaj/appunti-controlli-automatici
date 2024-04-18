@@ -29,3 +29,61 @@ Si possono studiare le proprietà del movimento libero tramite la trasformazione
 
 Per blocchi corrispondenti a coppie di autovalori complessi e coniugati del tipo $\lambda = \sigma \pm j\omega$, la matrice $\overline{A} = \begin{bmatrix}\sigma&\omega\\\omega&\sigma\end{bmatrix}$
 
+## Calcolo autovalori di una matrice.
+Se la matrice è diagonale o triangolare, gli autovalori sono sulla diagonale, perfettamente visibili senza effettuare operazioni, altrimenti,
+per trovare gli autovalori di una matrice non diagonale, si usa il polinomio caratteristico, definito come il determinante di $A - \lambda I$:
+
+$P_c = det\begin{bmatrix}A_{11} - \lambda&A_{12}&A_{13}\\A_{21}&A_{22} - \lambda&A_{23}\\A_{31}&A_{32}&A_{33}-\lambda\end{bmatrix} = 0$.
+
+Per le matrici triangolari a blocchi o diagonali a blocchi, gli autovalori sono la combinazione degli autovalori dei blocchi sulla diagonale.
+
+
+## Inizio
+Avendo l'evoluzione dello stato $\dot{x} = Ax + Bu$, si realizza la matrice esponenziale come $e^{At}$. Questo però è molto oneroso computazionalmente, quindi si studia in alcuni casi specifici (diagonali a blocchi o triangolari a blocchi).
+
+Una volta trovati gli autovalori, si considerano molteplicità e insieme degli autovalori.
+
+### Reali e distinti
+Il modo associato all'autovalore è $e^{\lambda t}$. Quindi passando allo studio della caratteristica dei modi, si ha che un modo è convergente, se l'autovalore associato al modo è minore di zero, viceversa, è divergente. Se l'autovalore è nullo, allora il modo è limitato.
+
+In questo caso, le regole di divergenza per minore / maggiore di zero rimangono uguali, tuttavia il modo diverge anche se $\lambda$ è uguale a 0.
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| < 0   | Convergente |
+| 0     | Divergente |
+| > 0   | Divergente |
+
+### Reali e non distinti
+In questo caso, considerando i $\mu^{'}$ autovalori associati a $\lambda$, si ha che il modo associato all'autovalore $(\lambda, \mu_i)$ è pari a $t^{\mu_i - 1}e^{\lambda t}$. Non è importante ricavare $\mu^{'}$, ma basta sapere che $\mu^{'} < \mu$ (molteplicità algebrica).
+
+
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| < 0   | Convergente |
+| 0     | Limitato |
+| > 0   | Divergente |
+
+
+### Complessi e distinti
+In questo caso, l'autovalore si scrive come $\lambda = \sigma \pm j\omega$. Quindi per ogni coppia di autovalori vi è una coppia di modi associati, e si trovano come come $e^{\sigma t}cos(\omega t)$ e $e^{\sigma t}sin(\omega t)$.
+
+In questo caso, se $\sigma$, ovvero la parte reale del numero complesso è minore di zero, allora il modo associato è *convergente*, e l'area del modo è contenuta all'interno dell'inviluppo, ovvero all'interno di $e^{\sigma t}$ (sup) e $e^{-\sigma t}$ (inf). Viceversa, se è maggiore di zero è *divergente*.
+
+Se invece $\sigma$ è nullo, l'inviluppo è tra 1 e -1, e quindi il modo è un semplice seno / coseno tra 1 e -1 *oscillante*.
+
+| Re{Autovalore} | Comportamento |
+| ----- | ---- |
+| < 0   | Convergente |
+| 0     | Limitato |
+| > 0   | Divergente |
+
+### Complessi e non distinti
+In questo caso, la forma della coppia di modi naturali che esce è $t^{\mu_i - 1}e^{\sigma t}cos(\omega t)$ e $t^{\mu_i - 1}e^{\sigma t}sin(\omega t)$.
+
+| Autovalore | Comportamento |
+| ----- | ---- |
+| < 0   | Convergente |
+| 0     | Divergente |
+| > 0   | Divergente |
