@@ -24,3 +24,6 @@
 
 *[Jacobiana]: 
     In analisi matematica, in particolare nel calcolo vettoriale e nel calcolo infinitesimale, la matrice di Jacobi o matrice jacobiana di una funzione è la matrice i cui elementi sono le derivate parziali prime della funzione. Lo Jacobiano è il determinante della matrice jacobiana, quando questa è quadrata.
+
+*[singolare]:
+    Matrice invertibile.
