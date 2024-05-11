@@ -1,17 +1,25 @@
 # Stabilità
 Un sistema si dice stabile se è poco sensibile a perturbazioni sullo stato iniziale.
-Considerando $Y(s) = H_o x_{0_-} + H(s)U(s)$, dove il primo termine è la risposta libera e la seconda quella forzata, si suddivide la stabilità in interna ed esterna esaminando le due risposte separatamente.
+Quando si esamina lo stato del sistema $\tilde{x}$, normalmente si ricava più facilmente una versione semplificata ed approssimata dello stato $x$.
+La differenza tra questi due stati, $x - \tilde{x} = \delta x$ è ciò che viene analizzato per definire la stabilità di un sistema.
+
+Se questa $\delta x$ diverge, allora il sistema è considerato instabile. Altrimenti:
+
+- Se $lim_{t\to\infty} \delta x(t) = 0$, allora $\tilde{x}$ è asintoticamente stabile;
+- Se $lim_{t\to\infty} \delta x(t) = k$, allora $\tilde{x}$ è semplicemente stabile;
+- Se $lim_{t\to\infty} \delta x(t) = 0$, per ogni $x_0$ (stato iniziale) allora $\tilde{x}$ è globalmente stabile;
+
+Se il sistema è LTI, il sistema $\delta{x}$ non dipende da $\tilde{x}$, e quindi basta analizzare il movimento dello stato reale.
 
 ## Stabilità interna
-Si parla di stabilità interna quando non esiste uno stato iniziale degenere per cui la risposta libera è instabile.
-
+Si parla di stabilità interna quando non esiste uno stato iniziale degenere per cui l'evoluzione dello stato è divergente.
 Per determinare la stabilità interna si analizzano gli autovalori di A, tramite le seguenti condizioni di stabilità applicate a tutti gli autovalori:
 
 | Tempo continuo | Tempo Discreto |
 | --- | --- |
 | $Re(autovalore) < 0$ | \| autovalore \| < 1 |
 
-Si possono usare degli altri criteri per determinare la stabilità interna anche avendo soltanto la matrice di trasferimento.
+Si possono usare degli altri criteri per determinare la stabilità interna anche nei casi in cui il polinomio caratteristico è troppo difficile da scomporre, o non scomponibile.
 
 Nel caso di tempo continuo si possono usare:
 
@@ -43,14 +51,14 @@ Dato $H(s) = \frac{N(s)}{D(s)}$, il cui grado del denominatore è minore o ugual
 
 Le tre disequazioni sono:
 
-- $D(1) = 0$
+- $D(1) > 0$
 - $(-1)^n D(-1) > 0$
 - $|a_n| > |a_0|$
 
 ### Criterio di Jury
 
 ## Stabilità esterna
-Si parla di stabilità esterna quando non esiste un ingresso degenere per cui la risposta forzata è instabile.
+Si parla di stabilità esterna quando non esiste un ingresso degenere per cui la risposta forzata non diverge.
 
 Per determinare la stabilità interna si analizzano i poli di H(s), tramite le seguenti condizioni di stabilità applicate a tutti i poli:
 
@@ -58,7 +66,12 @@ Per determinare la stabilità interna si analizzano i poli di H(s), tramite le s
 | --- | --- |
 | $Re(polo) < 0$ | \| polo \| < 1 |
 
-!!! note
+!!! warning "Poli e Autovalori"
 
     Notare che i poli di H(s) sono un sottoinsieme degli autovalori di A. $Poles\{H(s)\} \in Eig\{A\}$.
-    Si ha quindi l'implicazione che stabilità interna implica stabilità esterna, ma non viceversa.
+    Si ha quindi l'implicazione che stabilità interna implica stabilità esterna, ma la stabilità esterna implica la stabilità interna **solo se** il sistema è in forma minima.
+    Questo avviene in quanto la risposta di un sistema in forma minima non dipende dalla risposta libera.
+
+    Nel caso in cui il sistema sia in forma minima, allora l'insieme dei poli collide completamente con l'insieme degli autovalori.
+    Solo e solamente in questo caso, è possibile utilizzare i criteri avendo i poli del sistema ma non gli autovalori per ricavare la stabilità interna.
+    

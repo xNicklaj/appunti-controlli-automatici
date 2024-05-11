@@ -27,3 +27,9 @@
 
 *[singolare]:
     Matrice invertibile.
+
+*[stabile]:
+    Condizione per cui una differenza in stato iniziale non porta, all'infinito ad una differenza con lo stato teorico.
+
+*[instabile]: 
+    Condizione per cui una differenza in stato iniziale porta ad una differenza con lo stato teorico.

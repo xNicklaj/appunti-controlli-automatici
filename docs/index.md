@@ -16,5 +16,6 @@
     - [Analisi Modale per sistemi dinamici LTI TC](lezioni/lezione_08.md)
     - [Movimento di sistemi dinamici LTI-TD](lezioni/lezione_09.md)
     - [Stabilità interna ed esterna](lezioni/lezione_11.md)
+    - [Equilibrio di un sistema dinamico](lezioni/lezione_10.md)
     - [Equilibrio e stabilità di sistemi dinamici](lezioni/lezione_10.md)
-    - [Boh](lezioni/lezione_boh.md)
+    - [Raggiungibiltà e controllabilità](lezioni/lezione_12.md)
