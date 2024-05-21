@@ -47,7 +47,7 @@ Si trasforma con laplace come: $L\{\dot{x}(t)\} = sX(s) - x(0) = AX(s) + BU(s)$.
 
 Per y(t) si ha che $Y(s) = C(sI - A)^{-1}x(0_-) + [C(sI - A)^{-1}B + D] U(s)$ dove il primo termine è la risposta libera e il secondo termine è la riposta forzata.
 
-- $C(sI-A)^{-1}B + D$ + chiamata matrice di trasferimento $H(s)$.
+- $[C(sI-A)^{-1}B + D]$ + chiamata matrice di trasferimento $H(s)$.
 
 Nei sistemi MIMO (p ingressi e q entrate) inizialmente a riposo (ovvero in cui $x(0_-) = 0$) H(s) è nella forma:
 

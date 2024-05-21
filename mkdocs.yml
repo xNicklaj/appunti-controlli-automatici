@@ -53,7 +53,8 @@ nav:
       - lezioni/lezione_11.md
       - lezioni/lezione_12.md
     - Parte II:
-      - lezioni/lezione_02_01.md
+      - lezioni/lezione_13.md
+      - lezioni/lezione_14.md
 
 extra_javascript:
   - javascripts/mathjax.js
