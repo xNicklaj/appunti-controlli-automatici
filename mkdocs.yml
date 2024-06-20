@@ -55,6 +55,7 @@ nav:
     - Parte II:
       - lezioni/lezione_13.md
       - lezioni/lezione_14.md
+      - lezioni/lezione_15.md
 
 extra_javascript:
   - javascripts/mathjax.js
